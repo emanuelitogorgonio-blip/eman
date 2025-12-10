@@ -1,7 +1,7 @@
 // Login credentials (in a real application, this would be handled server-side)
 const validCredentials = {
-    username: "Emman",
-    password: "Emman123"
+    username: "My Name",
+    password: "My name with numbers"
 };
 
 // Check if user is already logged in when portfolio page loads
@@ -15,9 +15,10 @@ window.addEventListener('DOMContentLoaded', function() {
     if (window.location.pathname.includes('login.html') || window.location.pathname.endsWith('login.html')) {
         const isLoggedIn = sessionStorage.getItem('isLoggedIn');
         if (isLoggedIn === 'true') {
-            window.location.href = ';
-        }portfolio.html'
-        
+            window.location.replace('portfolio.html');
+            return;
+        }
+
         // Setup login form handler
         const loginForm = document.getElementById('loginForm');
         if (loginForm) {
@@ -41,7 +42,7 @@ function handleLogin(event) {
         sessionStorage.setItem('username', username);
         
         // Redirect to portfolio page
-        window.location.href = 'portfolio.html';
+        window.location.replace('portfolio.html');
     } else {
         // Show error message
         errorMessage.textContent = 'Invalid username or password. Please try again.';
@@ -76,5 +77,4 @@ function logout() {
     // Redirect to login page
     window.location.href = 'login.html';
 }
-
 
