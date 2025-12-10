@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio - Emanuelito Gorgonio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background video -->
+    <video autoplay muted loop playsinline class="portfolio-background-video" id="portfolioBgVideo">
+        <source src="Bleach.mp4" type="video/mp4">
+        <source src="Bleach.mp4" type="video/mp4">
+    </video>
+    <!-- Fallback background image if video doesn't exist -->
+    <div class="portfolio-background-image" id="portfolioBgImage"></div>
+    <div class="portfolio-background-overlay"></div>
+    
+    <div class="container portfolio-container">
+        <header>
+            <h1>Emanuelito Gorgonio</h1>
+            <p>Front-end enthusiast • Lifelong learner </p>
+            <img src="Eman.jpg" alt="Profile" class="profile">
+            <button onclick="logout()" class="logout-btn">Logout</button>
+        </header>
+
+        <main>
+            <section>
+                <h2>About Me</h2>
+                <p>
+                    Just me being me simple, chill, and always looking for good vibes and growth.
+                </p>
+            </section>
+
+            <section>
+                <h2>Skills</h2>
+                <ul class="list">
+                    <li>Technical Skills</li>
+                    <li>Critical Thinking</li>
+                    <li>Leadership</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Hobbies</h2>
+                <div class="hobby">
+                    <strong>Basketball</strong>
+                    <p>I love doing Basketball with my friends even if its hot or cold.</p>
+                </div>
+                <div class="hobby">
+                    <strong>Video Games</strong>
+                    <p>I love playing video games with my friends even if its online or offline.</p>
+                </div>
+                <div class="hobby">
+                    <strong>Cooking</strong>
+                    <p>I love cooking with my friends even if its not good.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Contact</h2>
+                <p>Email: <a href="mailto:emanuelito@carsu.com">emanuelito@carsu.com</a></p>
+                <p>Phone: <a href="tel:+10000000000">+1 (000) 6969696</a></p>
+            </section>
+        </main>
+
+        <footer>
+            <small>&copy; 2025 Emanuelito Gorgonio. All rights reserved.</small>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+    <script>
+        // Handle portfolio video background loading
+        const portfolioBgVideo = document.getElementById('portfolioBgVideo');
+        const portfolioBgImage = document.getElementById('portfolioBgImage');
+        
+        // Check if video loads successfully
+        portfolioBgVideo.addEventListener('loadeddata', function() {
+            console.log('Portfolio video loaded successfully');
+            portfolioBgImage.style.display = 'none';
+        });
+        
+        // If video fails to load, show image fallback
+        portfolioBgVideo.addEventListener('error', function(e) {
+            console.log('Portfolio video failed to load, using image fallback');
+            portfolioBgVideo.style.display = 'none';
+            portfolioBgImage.style.display = 'block';
+        });
+        
+        // Try to load the video
+        portfolioBgVideo.load();
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Portfolio Access</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container">
+        <!-- Background video -->
+        <video autoplay muted loop playsinline class="background-video" id="bgVideo">
+            <source src="background.mp4.mp4" type="video/mp4">
+            <source src="background.mp4" type="video/mp4">
+            <source src="background.webm" type="video/webm">
+        </video>
+        <!-- Fallback background image if video doesn't exist -->
+        <div class="background-image" id="bgImage"></div>
+        <div class="background-overlay"></div>
+        
+        <div class="login-box">
+            <h1>Portfolio Login</h1>
+            <p class="subtitle">Enter your credentials to access the portfolio</p>
+            
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required placeholder="Enter your username">
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required placeholder="Enter your password">
+                </div>
+                
+                <div id="errorMessage" class="error-message"></div>
+                
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+            
+            <div class="login-info">
+                <p><small>Default credentials: username: <strong>My Name </strong> | password: <strong>My name with numbers</strong></small></p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+    <script>
+        // Handle video background loading
+        const bgVideo = document.getElementById('bgVideo');
+        const bgImage = document.getElementById('bgImage');
+        
+        // Check if video loads successfully
+        bgVideo.addEventListener('loadeddata', function() {
+            console.log('Video loaded successfully');
+            bgImage.style.display = 'none';
+        });
+        
+        // If video fails to load, show image fallback
+        bgVideo.addEventListener('error', function(e) {
+            console.log('Video failed to load, using image fallback');
+            bgVideo.style.display = 'none';
+            bgImage.style.display = 'block';
+        });
+        
+        // Try to load the video
+        bgVideo.load();
+    </script>
+</body>
+</html>
+
