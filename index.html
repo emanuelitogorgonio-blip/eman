@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0; url=login.html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio - About Me</title>
+    <title>Redirecting to Login</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -69,56 +70,22 @@
     </style>
     </head>
 <body>
-    <div class="container">
+    <div class="container" style="text-align:center">
         <header>
-            <h1>Emanuelito Gorgonio</h1>
-            <p>Front-end enthusiast • Lifelong learner • </p>
-            <img src="Eman.jpg" alt="Profile" class="profile">
+            <h1>Redirecting to login...</h1>
+            <p>If you are not redirected, <a href="login.html">click here</a>.</p>
         </header>
-
-        <main>
-            <section>
-                <h2>About Me</h2>
-                <p>
-                    Just me being me simple, chill, and always looking for good vibes and growth.
-                </p>
-            </section>
-
-        <section>
-            <h2>Skills</h2>
-            <ul class="list">
-                <li>Technical Skills</li>
-                <li>Critical Thinking</li>
-                <li>Leadership</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Hobbies</h2>
-            <div class="hobby">
-                <strong>Basketball</strong>
-                <p>I love doing Basketball with my friends even if its hot or cold.</p>
-            </div>
-            <div class="hobby">
-                <strong>Video Games</strong>
-                <p>I love playing video games with my friends even if its online or offline.</p>
-            </div>
-            <div class="hobby">
-                <strong>Cooking</strong>
-                <p>I love cooking with my friends even if its not good.</p>
-            </div>
-        </section>
-
-        <section>
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:emanuelito@carsu.com">emanuelito@carsu.com</a></p>
-            <p>Phone: <a href="tel:+10000000000">+1 (000) 6969696</a></p>
-        </section>
-    </main>
-
-        <footer>
-            <small>&copy; 2025 Emanuelito Gorgonio. All rights reserved.</small>
-        </footer>
     </div>
+    <script>
+        // Fallback redirect in case meta refresh is cached/blocked
+        (function() {
+            var target = 'login.html';
+            if (window.location.pathname.endsWith('/')) {
+                window.location.replace(target);
+            } else {
+                window.location.href = target;
+            }
+        })();
+    </script>
 </body>
 </html>
