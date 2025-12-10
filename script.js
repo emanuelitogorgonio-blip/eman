@@ -1,7 +1,7 @@
 // Login credentials (in a real application, this would be handled server-side)
 const validCredentials = {
-    username: "My Name",
-    password: "My name with numbers"
+    username: "Emman",
+    password: "Emann123"
 };
 
 // Check if user is already logged in when portfolio page loads
@@ -31,8 +31,8 @@ window.addEventListener('DOMContentLoaded', function() {
 function handleLogin(event) {
     event.preventDefault();
     
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value.trim();
     const errorMessage = document.getElementById('errorMessage');
     
     // Validate credentials
