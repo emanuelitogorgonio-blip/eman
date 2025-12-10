@@ -1,7 +1,7 @@
 // Login credentials (in a real application, this would be handled server-side)
 const validCredentials = {
-    username: "Eman",
-    password: "Eman123"
+    username: "Emman",
+    password: "Emman123"
 };
 
 // Check if user is already logged in when portfolio page loads
@@ -76,4 +76,5 @@ function logout() {
     // Redirect to login page
     window.location.href = 'login.html';
 }
+
 
