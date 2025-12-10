@@ -15,8 +15,8 @@ window.addEventListener('DOMContentLoaded', function() {
     if (window.location.pathname.includes('login.html') || window.location.pathname.endsWith('login.html')) {
         const isLoggedIn = sessionStorage.getItem('isLoggedIn');
         if (isLoggedIn === 'true') {
-            window.location.href = 'portfolio.html';
-        }
+            window.location.href = ';
+        }portfolio.html'
         
         // Setup login form handler
         const loginForm = document.getElementById('loginForm');
